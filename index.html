@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours and travelling agency</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,700;1,400;1,600&display=swap');
+
+
+:root{
+   --lightblue:#2f359b;
+}
+
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 2s linear;
+    
+}
+
+*::selection{
+    background: var(--lightblue);
+    color:black;  
+}
+
+section{
+    padding: 1rem 9%;
+}
+
+.btn{
+    display: inline;
+    margin: .7rem;
+    background: var(--lightblue);
+    color: aliceblue;
+    border: .1rem solid var(--lightblue);
+    cursor: pointer;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: cornflowerblue;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 10%;
+}
+
+h1{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+
+header.logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+header.logo span{
+    color: var(--lightblue);
+}
+
+header .navbar a{
+    color: aliceblue;
+    font-size: 2rem;
+    margin: 0.7rem;
+}
+
+header .navbar a:hover{
+    color: var(--lightblue);
+}
+
+header.icons i{
+    font-size: 3rem;
+    color:aliceblue;
+    cursor: pointer;
+}
+
+
+header .icons i:hover{
+    color: var(--lightblue);
+}
+
+header.search-bar-container{
+    position: fixed;
+    top: 100%; right: 0%; left: 0%;
+    padding: 2rem,3rem;
+    background: #333;
+    border-top: 6rem solid rgba(255, 255, 255, .2);
+    display: flex;
+    text-align: center;
+    z-index: 1001;
+    clip-path: polygon(0 0,100%,100% 0, 0 0);
+}
+
+header.search-bar-container.active{
+    clip-path: polygon(0 0,100%,100% 0, 0 0);
+}
+
+header.search-bar-container #search-bar{
+     width: 100%;
+     padding: 2rem;
+     text-transform: none;
+     color: #333;
+     font-size: 1.7rem;
+     border-radius: .5rem;
+}
+
+header.search-bar-container label{
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-left: 2rem;
+}
+
+header.search-bar-container label:hover{
+      color: var(--lightblue);
+}
+
+.login-form-container{
+    position: fixed;
+    z-index: 100;
+    top: 10%;left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-form-container .active{
+top: 0;
+}
+
+.login-form-container form{
+    margin: .5rem;
+    padding: 0.5rem .5rem;
+    border-radius: 0.2rem;
+    background: aliceblue;
+    width: 40rem;
+    height: 20rem;
+}
+
+.login-form-container form h3{
+    font-size: 3rem;
+    color: #444;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.login-form-container form.box{
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+    color: #333;
+    margin: 4rem 0;
+    border: 1rem solid rgba(0, 0, 0, 0.3);
+    text-transform: none;
+}
+
+.login-form-container form.box:focus{
+    background-color: var(--lightblue);
+}
+
+.login-form-container form #remember{
+    margin: .5rem 0;
+}
+
+.login-form-container form label{
+    font-size: 1rem;
+}
+
+.login-form-container form.btn{
+    display: block;
+    width: 100%;
+}
+
+.login-form-container form p{
+    padding: .5rem 0;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+
+.login-form-container form p a{
+    color: var(--lightblue);
+}
+
+.login-form-container form p a:hover{
+    color: #333;
+    text-decoration:underline ;
+}
+
+.login-form-container #form-close{
+    position: absolute;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#menu-bar{
+    color: aliceblue;
+    border: 1rem thin aliceblue;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 1rem 1rem;
+    cursor: pointer; 
+}   
+
+.home{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    height: 300rem;
+}
+
+
+
+/*media queries */
+
+@media(max-width:991px){
+
+    header{
+        padding: 2rem;
+    }
+}
+
+@media(max-width:770px){
+
+    #menu-bar{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top:100% ; right: 0;left: 0;
+        background: #333;
+        border-top: 0.1rem solid rgba(255, 255, 255, .2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+
+    header.navbar.active{
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+    header .navbar a{
+        display: block;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        background: #222;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+
+        <h3>Great moment to be!!</h3>
+        
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="#" class="logo">
+        <span>
+            <h1>TravelioPEDIA</h1>
+        </span>
+        </a>
+        
+        <nav>
+
+            <a href="#Home">Home</a>&nbsp; &nbsp; &nbsp; 
+            <a href="#Book">Book</a>&nbsp; &nbsp; &nbsp;
+            <a href="#Packages">Packages</a>&nbsp; &nbsp; &nbsp;
+            <a href="#Services">Services</a>&nbsp; &nbsp; &nbsp;
+            <a href="#Gallery">Gallery</a>&nbsp; &nbsp; &nbsp;
+            <a href="#Contact">Contact</a>&nbsp; &nbsp; &nbsp;
+            <a href="#About us">About us</a>&nbsp; &nbsp; &nbsp;
+    
+          <nav>
+
+      <div class="icons"> 
+
+        <div class="icons">
+
+            <i class="fas fa-search" id="search-btn"></i>&nbsp; &nbsp;&nbsp;&nbsp;
+            <i class="fas fa-user" id="login-btn"></i>&nbsp; &nbsp; &nbsp; &nbsp;
+
+           </div>
+
+           
+
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here.......">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+
+
+
+    </header>
+
+    <!--header section ends-->
+    <!--login-form-container-->
+
+    <div class="login-form-container">
+
+        <i class="fas fa-time" id="form-close"></i>
+
+        <form action="">
+            <h3>login</h3>
+            <input type="email or username" class="box" placeholder="enter username">
+            <input type="password" class="box" placeholder="password">
+            <input type="submit" value="login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>forget password? <a href="#">click here</a></p>
+            <p>dont't have account? <a href="#">register</a></p>
+        </form>
+    </div>
+
+
+    <!--home section starts-->
+    <section class="home" id="home">
+         
+        <div class="content">
+          <h3>Let's do some adventure</h3>
+          <p>Discover new place with us,adventure awaits</p>
+          <a href="#" class="btn">Discover more</a>
+        </div>
+
+    </section>
+
+    <!--custom javascript file-->
+    <script>
+        let searchBtn=documnet.queryselector('#search-btn');
+let searchar=documnet.queryselector('#search-bar-container');
+let formbtn=documnet.queryselector('#login-btn');
+let loginForm=documnet.queryselector('#login-bar-container');
+let formClose=documnet.queryselector('#form-close');
+let menu=document.queryselector('#menu-bar');
+let navbar=document.querySelector('#.navbar')
+
+
+window.onscroll=()=>{
+    searchBtn.classlist.remove('fa-times');
+    searchBar.classlist.remove('active');
+    menu.classlist.remove('fa-times');
+    navbar.classlist.remove('active');
+    loginForm.classlist.remove('active');
+}
+
+menu.addEventListner('click',() =>{
+menu.classlist.toggle('fa-times');
+navbar.classlist.toggle('active');
+});
+
+
+searchBtn.addEventListner('click',()=>{
+    searchBtn.classlist.toggle('fa-times');
+    searchBtn.classlist.toggle('active');
+});
+
+formBtn.addEventListner('click',()=>{
+    loginForm.classlist.add('active');
+});
+
+formClose.addEventListner('click',()=>{
+    loginForm.classlist.remove('active');
+});
+    </script>
+</body>
+</html>
